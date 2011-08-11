@@ -1,0 +1,25 @@
+How to run:
+    ruby CombinedCiphers.rb
+    
+    You may supply an optional file name, default is complex_cipher.txt
+    
+Notes:
+    Solved with Ruby 1.9.2
+    
+    My Caesar decryption uses a dictionary, I took the dictionary from /usr/share/dict/ of my Linux installation (Linux Mint 10 - it's awesome!). I hope I don't get into licnensing trouble ;-) 
+    The dictionary is also supplied in my .zip file.
+    
+    RepeatingKey could have been done using an enumerator, however there is no "next?" method and I feel uncomfortable frequently catching the exception and calling rewind. 
+    However I haven't read "Exceptional Ruby" yet - so my view might change ;-)
+    
+    I am aborting when the first matching key is found for the Caesar chiffre, as multiple matches didn't occur in the test file. 
+    
+    Some other comments may be found in code where appropriate. And yes I am a guy who comments a lot (somtetimes too much I guess)
+    
+Personal Notes:
+    I could have taken more time and finish reading Ruby Best Practices first. However in the beginning of August I'll move to Sweden for 8 months in order to start studying my Master's degree in Software Engineering. So I got a lot of things to do and I wanted to enter my application before every place is taken.
+    I hope this is close to what you consider idiomatic Ruby, even without defining methods with blocks myself (I didn't see the need to). I still got a lot to learn ;-)
+    
+    If the code appears to be a bit too Java-ish: I had to write Java for the past eight months every day during the course of my bachelor project. I hope that the damage isn't lasting.
+    
+    Thank you for running RMU.
