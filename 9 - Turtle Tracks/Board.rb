@@ -30,9 +30,8 @@ class Board
 
   def to_s
     string = ""
-    @board.each do
-      | row |
-      row.each { | field | string << field << SEPERATOR }
+    @board.each do |row|
+      row.each { |field| string << field << SEPERATOR }
       # the last space needs to be removed and a line break is needed
       string.chop! << "\n"
     end

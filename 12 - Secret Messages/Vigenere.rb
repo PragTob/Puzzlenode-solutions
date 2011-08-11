@@ -7,8 +7,7 @@ class Vigenere
 
   def self.decrypt(cipher, key)
     @key = RepeatingKey.new key
-    result = cipher.chars.inject("") do
-      | result, char |
+    result = cipher.chars.inject("") do |result, char|
       # our message consists just of characters from A to Z
       if char.match /[A-Z]/
         result << decipher_char(char)

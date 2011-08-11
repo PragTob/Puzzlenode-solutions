@@ -25,7 +25,7 @@ puts "The key used for decryption is: " << key
 file.readline
 
 # decipher the text
-cipher_text = file.each.inject("") { | cipher, line | cipher << line }
+cipher_text = file.each.inject("") { |cipher, line| cipher << line }
 file.close
 
 deciphered_text = Vigenere.decrypt cipher_text, key
@@ -35,8 +35,7 @@ print deciphered_text
 
 # create the file containing the deciphered_text
 out_file_name = file_name.gsub("cipher", "out")
-File.open out_file_name, "w" do
-  | file |
+File.open out_file_name, "w" do |file|
   file.write deciphered_text
 end
 

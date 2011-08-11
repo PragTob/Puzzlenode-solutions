@@ -16,15 +16,14 @@ class TurtleInstructionsParser
 
     # parse the boardsize (first value)
     board_size = file.readline.chomp.to_i
-    initialize_components board_size  
+    initialize_components board_size
     puts "Board and turtle initialized"
 
     # uninteresting newline (such is the file format)
     file.readline
 
     # real parsing action
-    file.each do
-      | line |
+    file.each do |line|
       if line.match /REPEAT \d+/
         parse_repeat_command line
       else
@@ -38,8 +37,7 @@ class TurtleInstructionsParser
 
     # create the output file
     out_file_name = instructions_file.gsub ".logo", "_out.txt"
-    File.open out_file_name, "w" do
-      | file |
+    File.open out_file_name, "w" do |file|
       file.write @board.to_s
     end
   end
@@ -63,7 +61,7 @@ class TurtleInstructionsParser
       when /BK (\d+)/
         @turtle.move_backward $1.to_i
       else
-        raise 'unknown parse command "' << string << '"' 
+        raise 'unknown parse command "' << string << '"'
     end
   end
 
@@ -73,7 +71,7 @@ class TurtleInstructionsParser
 
     # extract the REPEAT part with the commands
     command_string = string[string.index('[') + 1 ... string.index(']') - 1]
-    
+
 
     # unfortunately my tries with split(/([A-Z]+ \d+) /) failed
     # the array contained many empty strings (because it matched and all that
@@ -84,8 +82,7 @@ class TurtleInstructionsParser
 
     # and now repeat all the contained commands
     repeat_count.times do
-      commands.each do
-        | command |
+      commands.each do |command|
         # there are no nested REPEATS
         parse_movement_command command
       end

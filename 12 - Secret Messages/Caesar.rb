@@ -10,9 +10,8 @@ extend CharacterShift
     dictionary = read_dictionary dictionary_name
 
     # perform all 26 possible rotations to each character of the cipher word
-    (0..25).each do
-      | index |
-      deciphered_word = word.chars.inject("") { | word, char | word << shift_character_by(char, index) }
+    (0..25).each do |index|
+      deciphered_word = word.chars.inject("") { |word, char| word << shift_character_by(char, index) }
 
       # is our deciphered word included in the given dictionary?
       # the possibillity of multiple matching key words is ignored here,
@@ -28,7 +27,7 @@ extend CharacterShift
 
   # read in the dictionary thereby modifying it for our purpose (all uppercase)
   def self.read_dictionary(filename)
-    File.foreach(filename).inject([]) {| dict, line | dict << line.chomp.upcase }
+    File.foreach(filename).inject([]) {|dict, line| dict << line.chomp.upcase }
   end
 
 end
