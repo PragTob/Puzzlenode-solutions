@@ -1,4 +1,4 @@
-require_relative 'CharacterShift'
+require_relative 'character_shift'
 
 # used to decrypt single words using the Caesar chiffre
 # a dictionary is used to check the results vor validity

@@ -1,5 +1,5 @@
-require_relative 'Caesar'
-require_relative 'Vigenere'
+require_relative 'caesar'
+require_relative 'vigenere'
 
 # script for solving the Vigenere puzzle
 # it parses the content and uses the decipher classes

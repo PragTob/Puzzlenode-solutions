@@ -1,5 +1,5 @@
-require_relative 'CharacterShift'
-require_relative 'RepeatingKey'
+require_relative 'character_shift'
+require_relative 'repeating_key'
 
 # class for decrypting Vigenere with a given key word
 class Vigenere
