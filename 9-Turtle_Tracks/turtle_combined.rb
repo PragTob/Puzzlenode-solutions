@@ -1,4 +1,4 @@
-require_relative 'TurtleInstructionsParser'
+require_relative 'turtle_instructions_parser'
 
 # a simple script that ultimately solves the turtle puzzle using the
 # TurtleInstructionsParser

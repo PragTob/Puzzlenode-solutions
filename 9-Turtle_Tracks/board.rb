@@ -1,4 +1,4 @@
-require_relative 'Position'
+require_relative 'position'
 
 # the board our turtle moves on
 class Board

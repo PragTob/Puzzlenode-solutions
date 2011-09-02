@@ -1,5 +1,5 @@
-require_relative 'Board'
-require_relative 'Turtle'
+require_relative 'board'
+require_relative 'turtle'
 
 # Parses the instructions for a turtle given by an input file
 # valid commands are:

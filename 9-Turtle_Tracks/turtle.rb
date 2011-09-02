@@ -1,6 +1,6 @@
-require_relative 'Board'
-require_relative 'Position'
-require_relative 'Direction'
+require_relative 'board'
+require_relative 'position'
+require_relative 'direction'
 
 # A turtle moving on a board
 # it may turn left, right or move forward or backward
@@ -44,16 +44,16 @@ class Turtle
       @orientation += FULL_CIRCLE_DEGREE
     end
   end
-  
+
   def move(current_direction, number_of_steps)
     number_of_steps.times do
       @position.move_in current_direction
       @board.visit_field @position
     end
   end
-  
+
   private
-  
+
   def direction
     Direction.for @orientation
   end
